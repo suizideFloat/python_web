@@ -5,7 +5,7 @@ URL = "http://haunebu.raxys.net:5000/?p="
 
 if __name__ == '__main__':
     for x in range(1, 11):
-        url_str = URL + str(x)
+        url_str = '%s%d' % (URL, x)
         sock = urllib.urlopen(url_str)
         x += 1
         htmlSource = sock.read()
