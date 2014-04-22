@@ -6,7 +6,7 @@ URL = 'http://haunebu.raxys.net:5000/?p='
 
 
 if __name__ == '__main__':
-    for x in range(1, 11):
+    for x in xrange(1, 11):
         url_str = '%s%d' % (URL, x)
         sock = urllib.urlopen(url_str)
         html_source = sock.read()
@@ -16,7 +16,7 @@ if __name__ == '__main__':
         #print html_source
         table = soup.find('table', attrs={'class': 'table'})
 
-        headings = [th.get_text() for th in table.find('tr').find_all('th')]
+        headings = (th.get_text() for th in table.find('tr').find_all('th'))
 
         datasets = []
 
