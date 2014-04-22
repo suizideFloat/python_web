@@ -7,7 +7,7 @@ if __name__ == '__main__':
     for x in range(1, 11):
         url_str = '%s%d' % (URL, x)
         sock = urllib.urlopen(url_str)
-        x += 1
+
         htmlSource = sock.read()
         sock.close()
         soup = BeautifulSoup(htmlSource)
