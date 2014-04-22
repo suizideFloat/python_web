@@ -21,10 +21,9 @@ if __name__ == '__main__':
         datasets = []
 
         for row in table.findAll('tr')[1:]:
-            dataset = zip(
+            datasets.append(zip(
                 headings, (td.get_text() for td in row.find_all('td'))
-            )
-            datasets.append(dataset)
+            ))
 
         #print datasets
 
